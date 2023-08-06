@@ -1,40 +1,35 @@
-def merge(arr, lb, mid, rb):
-	n1 = mid - lb + 1
-	n2 = rb - mid
-	# create temp arrays
-	L = [0] * (n1)
-	R = [0] * (n2)
-	# Copy data to temp arrays L[] and R[]
-	for i in range(0, n1):
-		L[i] = arr[lb + i]
-	for j in range(0, n2):
-		R[j] = arr[mid + 1 + j]
-	# Merge the temp arrays back into arr[l..r]
-	i = 0	 # Initial index of first subarray
-	j = 0	 # Initial index of second subarray
-	k = lb	 # Initial index of merged subarray
-	while i < n1 and j < n2:
-		if L[i] <= R[j]:
-			arr[k] = L[i]
-			i += 1
-		else:
-			arr[k] = R[j]
-			j += 1
-		k += 1
+def merge_sort(arr):
+    if len(arr) <= 1:
+        return arr
 
-	while i < n1:
-		arr[k] = L[i]
-		i += 1
-		k += 1
+    middle = len(arr) // 2
+    left_half = arr[:middle]
+    right_half = arr[middle:]
 
-	while j < n2:
-		arr[k] = R[j]
-		j += 1
-		k += 1
+    left_half = merge_sort(left_half)
+    right_half = merge_sort(right_half)
 
-def mergeSort(arr, lb, rb):
-	if lb < rb:
-		mid = lb+(rb-lb)//2
-		mergeSort(arr, lb, mid)
-		mergeSort(arr, mid+1, rb)
-		merge(arr, lb, mid, rb)
+    return merge(left_half, right_half)
+
+def merge(left, right):
+    result = []
+    left_index, right_index = 0, 0
+
+    while left_index < len(left) and right_index < len(right):
+        if left[left_index] < right[right_index]:
+            result.append(left[left_index])
+            left_index += 1
+        else:
+            result.append(right[right_index])
+            right_index += 1
+
+    result.extend(left[left_index:])
+    result.extend(right[right_index:])
+
+    return result
+
+# Example usage:
+if __name__ == "__main__":
+    arr = [38, 27, 43, 3, 9, 82, 10]
+    sorted_arr = merge_sort(arr)
+    print("Sorted array:", sorted_arr)
