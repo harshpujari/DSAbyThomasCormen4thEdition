@@ -1,6 +1,6 @@
 def bubble_sort(arr):
     n = len(arr)
-    for i in range(n):
+    for i in range(n-1):
         # Flag to check if any swaps are made in this pass
         swapped = False
 
