@@ -7,9 +7,13 @@ def horner_rule(coeffs, x):
 
     return result
 
-# Example usage:
 if __name__ == "__main__":
-    coeffs = [3, -6, 5, -2]  # Polynomial coefficients: 3x^3 - 6x^2 + 5x - 2
-    x = 2
+    n = int(input("Enter the degree of the polynomial: ")) + 1
+    coeffs = []
+    for i in range(n):
+        coeff = float(input(f"Enter coefficient a_{i}: "))
+        coeffs.append(coeff)
+
+    x = float(input("Enter the value of x: "))
     result = horner_rule(coeffs, x)
     print(f"The value of the polynomial at x={x} is:", result)
