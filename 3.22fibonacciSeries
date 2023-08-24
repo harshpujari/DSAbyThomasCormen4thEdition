@@ -1,0 +1,24 @@
+def fibonacci_series(n):
+    if n <= 0:
+        return []
+
+    fibonacci = [0, 1]
+    while fibonacci[-1] + fibonacci[-2] <= n:
+        next_num = fibonacci[-1] + fibonacci[-2]
+        fibonacci.append(next_num)
+
+    return fibonacci
+
+def main():
+    try:
+        input_num = int(input("Enter a positive integer: "))
+        if input_num < 0:
+            print("Please enter a positive integer.")
+        else:
+            series = fibonacci_series(input_num)
+            print("Fibonacci series:", series)
+    except ValueError:
+        print("Invalid input. Please enter a valid integer.")
+
+if __name__ == "__main__":
+    main()
