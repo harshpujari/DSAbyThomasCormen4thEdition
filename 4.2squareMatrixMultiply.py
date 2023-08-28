@@ -1,6 +1,3 @@
-#Strassen’s algorithm for matrix multiplication
-#There are 2 more approaches for the same problme but not of much use, all are of O(n3)
-
 def square_matrix_multiply(A, B):
     n = len(A)
     C = [[0 for _ in range(n)] for _ in range(n)]
