@@ -7,10 +7,8 @@ def square_matrix_multiply(A, B):
 
     for i in range(n):
         for j in range(n):
-            cij = 0
             for k in range(n):
-                cij += A[i][k] * B[k][j]
-            C[i][j] = cij
+                C[i][j] += A[i][k] * B[k][j]
 
     return C
 
