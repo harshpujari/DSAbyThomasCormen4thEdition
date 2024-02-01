@@ -1,4 +1,4 @@
-# it is Kadane’s Algorithm
+#it is Kadane’s Algorithm
 class Solution:
     def maxSubArray(self, nums):
         total_sum = max_sum = nums[0] 
