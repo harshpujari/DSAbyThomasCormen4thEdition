@@ -1,3 +1,4 @@
+# Define the Solution class with the maxSubArray method
 class Solution:
     def maxSubArray(self, nums):
         # Initialize variables to store the total sum and maximum sum
@@ -13,3 +14,15 @@ class Solution:
         
         # Return the maximum subarray sum
         return max_sum
+
+# Create an instance of the Solution class
+solution = Solution()
+
+# Test case
+nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
+
+# Call the maxSubArray method with the test case
+result = solution.maxSubArray(nums)
+
+# Print the result
+print("Maximum Subarray Sum:", result)
