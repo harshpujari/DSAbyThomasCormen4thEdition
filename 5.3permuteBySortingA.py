@@ -1,8 +1,21 @@
 import random
+
+
 def shuffle(a):
+    """
+    Shuffles the list a in-place using the Fisher-Yates shuffle algorithm.
+
+    Args:
+        a: The list to shuffle.
+
+    Returns:
+        None. The list is shuffled in-place.
+    """
+
     n = len(a)
-    for i in range(0, n):
-        r = random.randint(0, n-1)
+    for i in range(n):
+        # Generate a random index between i and n-1 (inclusive)
+        r = random.randint(i, n - 1)
+
+        # Swap the elements at indices i and r
         a[i], a[r] = a[r], a[i]
-        
-  #one of the most inefficient sort. 
