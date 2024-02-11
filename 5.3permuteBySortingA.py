@@ -19,3 +19,6 @@ def shuffle(a):
 
         # Swap the elements at indices i and r
         a[i], a[r] = a[r], a[i]
+
+# Example usage
+my_list = [1, 2, 3, 4, 5]
