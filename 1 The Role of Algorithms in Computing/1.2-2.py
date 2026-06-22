@@ -1,0 +1,19 @@
+"""
+Suppose insertion sort runs in $8n^2$ steps and merge sort runs in $64n \lg n$ steps.
+We want to find when insertion sort is faster, so solve
+
+$8n^2 < 64n \lg n$.
+
+Divide both sides by $8n$ (for $n > 0$):
+
+$n < 8 \lg n$.
+
+Checking values of $n$:
+- $n = 2$: $2 < 8\lg 2 = 8$  ✅
+- $n = 43$: $43 < 8\lg 43 \approx 43.4$  ✅
+- $n = 44$: $44 < 8\lg 44 \approx 43.7$  ❌
+
+So insertion sort beats merge sort for approximately
+
+$2 \le n \le 43$.
+"""
