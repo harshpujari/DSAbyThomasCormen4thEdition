@@ -13,3 +13,9 @@ def insertionSort(arr):
 
 		# Place key at the correct descending order position
 		arr[j+1] = key
+
+if __name__ == "__main__":
+	# Example usage for descending order sort
+	arr = [64, 34, 25, 12, 22, 11, 90]
+	insertionSort(arr)
+	print("Sorted array in descending order:", arr)
